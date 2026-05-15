@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)file:///Users/liam/Downloads/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>William J. Walsh — Author</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link href="./William J. Walsh — Author_files/css2" rel="stylesheet">
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --cream:    #F9F6F0;
+      --cream2:   #F1EDE4;
+      --charcoal: #1C1C1C;
+      --mid:      #5A5A54;
+      --cognac:   #A0522D;
+      --cognac-lt:#C4724A;
+      --border:   rgba(28,28,28,.1);
+      --serif:    'Cormorant Garamond', Georgia, serif;
+      --sans:     'DM Sans', sans-serif;
+    }
+
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(249,246,240,.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 62px;
+    }
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      letter-spacing: .02em;
+    }
+    .nav-links { display: flex; gap: 2.2rem; }
+    .nav-links a {
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--cognac); }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    #home {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 8rem clamp(1.5rem, 8vw, 8rem) 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-rule {
+      width: 48px; height: 2px;
+      background: var(--cognac);
+      margin-bottom: 2rem;
+      animation: slideIn .8s ease both;
+    }
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cognac);
+      margin-bottom: .8rem;
+      animation: fadeUp .8s .1s ease both;
+    }
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      font-weight: 600;
+      line-height: 1.0;
+      letter-spacing: -.01em;
+      margin-bottom: 1.6rem;
+      animation: fadeUp .8s .2s ease both;
+    }
+    .hero-tagline {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      color: var(--mid);
+      max-width: 520px;
+      line-height: 1.5;
+      animation: fadeUp .8s .35s ease both;
+    }
+    .hero-cta {
+      margin-top: 2.8rem;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp .8s .5s ease both;
+    }
+    .btn {
+      display: inline-block;
+      padding: .75rem 1.8rem;
+      font-family: var(--sans);
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--charcoal);
+      transition: all .22s;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+    .btn-primary:hover { background: var(--cognac); border-color: var(--cognac); }
+    .btn-outline:hover { background: var(--charcoal); color: var(--cream); }
+    .hero-bg-text {
+      position: absolute;
+      right: -2rem; bottom: -1rem;
+      font-family: var(--serif);
+      font-size: clamp(8rem, 22vw, 20rem);
+      font-weight: 600;
+      color: rgba(28,28,28,.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ─── SECTION SHELL ──────────────────────────────────────── */
+    section {
+      padding: 6rem clamp(1.5rem, 8vw, 8rem);
+    }
+    .section-header {
+      display: flex; align-items: center; gap: 1.2rem;
+      margin-bottom: 3.5rem;
+    }
+    .section-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+    }
+    .section-line {
+      flex: 1; height: 1px;
+      background: var(--border);
+    }
+
+    /* ─── ABOUT ──────────────────────────────────────────────── */
+    #about { background: var(--cream2); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-lead {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+    .about-body {
+      font-size: .95rem;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+    .about-body p + p { margin-top: 1rem; }
+    .about-stats {
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+    .stat-item {
+      padding: 1.4rem 1.6rem;
+      border: 1px solid var(--border);
+      background: var(--cream);
+    }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--cognac);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: .3rem;
+    }
+
+    /* ─── BOOKS ──────────────────────────────────────────────── */
+    #books {}
+    .series-block { margin-bottom: 4rem; }
+    .series-label {
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cognac);
+      margin-bottom: 1rem;
+      padding-bottom: .6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .book-card {
+      background: var(--cream2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      display: flex; flex-direction: column;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .book-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(28,28,28,.08);
+    }
+    .book-badge {
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--cognac);
+      display: inline-block;
+      padding: .25rem .65rem;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+    }
+    .book-badge.kindle { background: var(--mid); }
+    .book-badge.coming { background: var(--charcoal); }
+    .book-title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: .6rem;
+    }
+    .book-desc {
+      font-size: .87rem;
+      color: var(--mid);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1.4rem;
+    }
+    .book-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .book-price {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .book-link {
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cognac);
+      border-bottom: 1px solid currentColor;
+      padding-bottom: .1rem;
+      transition: color .2s;
+    }
+    .book-link:hover { color: var(--charcoal); }
+    .book-link.disabled { color: var(--mid); pointer-events: none; border-color: var(--mid); }
+
+    /* ─── CONTACT ────────────────────────────────────────────── */
+    #contact { background: var(--charcoal); color: var(--cream); }
+    #contact .section-header h2 { color: var(--cream); }
+    #contact .section-line { background: rgba(249,246,240,.15); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-lead {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      line-height: 1.5;
+      color: rgba(249,246,240,.75);
+      margin-bottom: 1.5rem;
+    }
+    .contact-note {
+      font-size: .9rem;
+      color: rgba(249,246,240,.55);
+      line-height: 1.7;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: .8rem; }
+    .contact-row {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(249,246,240,.12);
+      color: var(--cream);
+      transition: border-color .2s, background .2s;
+    }
+    .contact-row:hover {
+      border-color: var(--cognac-lt);
+      background: rgba(160,82,45,.08);
+    }
+    .contact-platform {
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cognac-lt);
+      min-width: 70px;
+    }
+    .contact-handle {
+      font-size: .9rem;
+      color: rgba(249,246,240,.8);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: #111;
+      color: rgba(249,246,240,.35);
+      text-align: center;
+      padding: 2rem;
+      font-size: .78rem;
+      letter-spacing: .04em;
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      from { width: 0; }
+      to   { width: 48px; }
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 720px) {
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .hero-bg-text { display: none; }
+    }
+    @media (max-width: 480px) {
+      .nav-links a { font-size: .72rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-name">William J. Walsh</div>
+    <div class="nav-links">
+      <a href="file:///Users/liam/Downloads/index.html#home">Home</a>
+      <a href="file:///Users/liam/Downloads/index.html#books">Books</a>
+      <a href="file:///Users/liam/Downloads/index.html#about">About</a>
+      <a href="file:///Users/liam/Downloads/index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-rule"></div>
+    <p class="hero-eyebrow">Author &amp; Independent Publisher</p>
+    <h1 class="hero-name">William<br>J. Walsh</h1>
+    <p class="hero-tagline">Practical guides for independent workers, gig economy professionals, and people building smarter habits.</p>
+    <div class="hero-cta">
+      <a href="file:///Users/liam/Downloads/index.html#books" class="btn btn-primary">Browse Books</a>
+      <a href="file:///Users/liam/Downloads/index.html#about" class="btn btn-outline">About the Author</a>
+    </div>
+    <div class="hero-bg-text">WJW</div>
+  </section>
+
+  <!-- BOOKS -->
+  <section id="books">
+    <div class="section-header">
+      <h2>Books</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Series: The Rideshare Driver's Log System -->
+    <div class="series-block">
+      <div class="series-label">The Rideshare Driver's Log System — Series</div>
+      <div class="books-grid">
+
+        <div class="book-card">
+          <span class="book-badge">Print</span>
+          <div class="book-title">2026 Rideshare Shift Log — Quarterly Edition</div>
+          <div class="book-desc">A structured shift-by-shift tracking system for rideshare drivers. Built to capture what your app doesn't — real earnings after expenses, per-shift.</div>
+          <div class="book-footer">
+            <span class="book-price">Print</span>
+            <a href="https://www.amazon.com/s?k=rideshare+shift+log+william+walsh" target="_blank" class="book-link">View on Amazon →</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <span class="book-badge">Print</span>
+          <div class="book-title">2026 Rideshare Mileage Log — Quarterly Edition</div>
+          <div class="book-desc">IRS-compliant mileage tracking for rideshare and delivery drivers. Every journey logged, every deduction supported — quarterly format for manageable record-keeping.</div>
+          <div class="book-footer">
+            <span class="book-price">Print</span>
+            <a href="https://www.amazon.com/s?k=rideshare+mileage+log+william+walsh" target="_blank" class="book-link">View on Amazon →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Standalone: Gig Economy -->
+    <div class="series-block">
+      <div class="series-label">Gig Economy — Standalone Titles</div>
+      <div class="books-grid">
+
+        <div class="book-card">
+          <span class="book-badge">Print</span>
+          <div class="book-title">2026 Mileage &amp; Expense Log</div>
+          <div class="book-desc">A comprehensive mileage and expense tracker for any independent worker. Track deductible miles, business costs, and income in one place.</div>
+          <div class="book-footer">
+            <span class="book-price">$9.99</span>
+            <a href="https://www.amazon.com/dp/B0GW63KQ1Z" target="_blank" class="book-link">View on Amazon →</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <span class="book-badge kindle">Kindle</span>
+          <div class="book-title">Rideshare Driver Income Guide 2026</div>
+          <div class="book-desc">The numbers your app won't show you. A plain-English breakdown of real rideshare earnings, expenses, and what you actually take home.</div>
+          <div class="book-footer">
+            <span class="book-price">$0.99</span>
+            <a href="https://www.amazon.com/dp/B0GX2ZYHSK" target="_blank" class="book-link">View on Amazon →</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <span class="book-badge coming">Coming Soon</span>
+          <div class="book-title">What You Earned, What You Owe: A Tax Guide for Gig Drivers — 2026 Edition</div>
+          <div class="book-desc">29 chapters covering 2026 IRS figures, deductions, quarterly estimated taxes, and the latest legislative updates for independent contractors.</div>
+          <div class="book-footer">
+            <span class="book-price">2026</span>
+            <span class="book-link disabled">Coming Soon</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Series: Practical AI Guides -->
+    <div class="series-block">
+      <div class="series-label">Practical AI Guides</div>
+      <div class="books-grid">
+
+        <div class="book-card">
+          <span class="book-badge kindle">Kindle</span>
+          <div class="book-title">The AI Style Assistant</div>
+          <div class="book-desc">How to use ChatGPT and Claude to dress better, shop smarter, and build a wardrobe that actually works. A practical guide for using AI as your personal style consultant.</div>
+          <div class="book-footer">
+            <span class="book-price">Kindle</span>
+            <a href="https://www.amazon.com/s?k=ai+style+assistant+william+walsh" target="_blank" class="book-link">View on Amazon →</a>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <span class="book-badge">Print &amp; Digital</span>
+          <div class="book-title">The Auctioneer AI Guide</div>
+          <div class="book-desc">A tool-agnostic guide for estate agents and auctioneers on using AI to work faster, communicate better, and manage more without expanding the team.</div>
+          <div class="book-footer">
+            <span class="book-price">—</span>
+            <a href="https://www.amazon.com/s?k=auctioneer+ai+guide+william+walsh" target="_blank" class="book-link">View on Amazon →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <h2>About</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p class="about-lead">I write practical guides for people who work independently and want to measure, track, and understand their business better.</p>
+        <div class="about-body">
+          <p>My background is in IT, cybersecurity, and operational data — which shapes how I approach every book I write. I don't believe in vague advice. I believe in systems: structured logs, clear numbers, and tools that give you the information to make better decisions.</p>
+          <p>The Rideshare Driver's Log System came from a simple observation: drivers aren't under-earning — they're under-measuring. The same principle drives everything I publish, whether it's a mileage log, a tax guide, or an AI assistant for your wardrobe.</p>
+          <p>I publish independently under the William J. Walsh name across two imprints: practical tracking tools for gig economy workers, and Practical AI Guides — accessible books for people who want to use AI tools in their real lives without the hype.</p>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Titles Published</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Publishing Imprints</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">US</div>
+          <div class="stat-label">Primary Market — Amazon KDP</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <h2>Contact</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-lead">Questions about a book, bulk orders, or media enquiries — get in touch.</p>
+        <p class="contact-note">I'm also active on social media, primarily sharing data-driven content for rideshare drivers and independent workers. Follow along if that's your world.</p>
+      </div>
+      <div class="contact-links">
+        <!-- Replace handle placeholders with your actual handles -->
+        <a href="https://twitter.com/YOUR_X_HANDLE" target="_blank" class="contact-row">
+          <span class="contact-platform">X / Twitter</span>
+          <span class="contact-handle">@YOUR_X_HANDLE</span>
+        </a>
+        <a href="https://threads.net/@YOUR_THREADS_HANDLE" target="_blank" class="contact-row">
+          <span class="contact-platform">Threads</span>
+          <span class="contact-handle">@YOUR_THREADS_HANDLE</span>
+        </a>
+        <a href="https://instagram.com/YOUR_IG_HANDLE" target="_blank" class="contact-row">
+          <span class="contact-platform">Instagram</span>
+          <span class="contact-handle">@YOUR_IG_HANDLE</span>
+        </a>
+        <a href="https://facebook.com/YOUR_FB_PAGE" target="_blank" class="contact-row">
+          <span class="contact-platform">Facebook</span>
+          <span class="contact-handle">YOUR_FB_PAGE</span>
+        </a>
+        <a href="mailto:YOUR_EMAIL_ADDRESS" class="contact-row">
+          <span class="contact-platform">Email</span>
+          <span class="contact-handle">YOUR_EMAIL_ADDRESS</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 William J. Walsh. All rights reserved. Published independently via Amazon KDP.
+  </footer>
+
+
+
+</body></html>
