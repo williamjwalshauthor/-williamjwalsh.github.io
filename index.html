@@ -162,7 +162,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
-      align-items: start;
+      align-items: stretch;
     }
     .about-lead {
       font-family: var(--serif);
@@ -180,11 +180,12 @@
     .about-body p + p { margin-top: 1rem; }
     .about-photo {
       width: 100%;
-      aspect-ratio: 3/4;
+      height: 100%;
       object-fit: cover;
-      object-position: top;
+      object-position: top center;
       border: 1px solid var(--border);
       filter: grayscale(15%);
+      display: block;
     }
 
     /* ─── BOOKS ──────────────────────────────────────────────── */
