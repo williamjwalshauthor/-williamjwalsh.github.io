@@ -178,28 +178,13 @@
       line-height: 1.8;
     }
     .about-body p + p { margin-top: 1rem; }
-    .about-stats {
-      display: flex; flex-direction: column; gap: 1.5rem;
-    }
-    .stat-item {
-      padding: 1.4rem 1.6rem;
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top;
       border: 1px solid var(--border);
-      background: var(--cream);
-    }
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: var(--cognac);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: .8rem;
-      font-weight: 500;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-top: .3rem;
+      filter: grayscale(15%);
     }
 
     /* ─── BOOKS ──────────────────────────────────────────────── */
@@ -466,24 +451,16 @@
       <div class="books-grid">
 
         <div class="book-card">
-          <span class="book-badge kindle">Kindle</span>
+          <span class="book-badge coming">Coming Soon</span>
           <div class="book-title">The AI Style Assistant</div>
           <div class="book-desc">How to use ChatGPT and Claude to dress better, shop smarter, and build a wardrobe that actually works. A practical guide for using AI as your personal style consultant.</div>
           <div class="book-footer">
-            <span class="book-price">Kindle</span>
-            <a href="https://www.amazon.com/s?k=ai+style+assistant+william+walsh" target="_blank" class="book-link">View on Amazon →</a>
+            <span class="book-price">—</span>
+            <span class="book-link disabled">Coming Soon</span>
           </div>
         </div>
 
-        <div class="book-card">
-          <span class="book-badge">Print &amp; Digital</span>
-          <div class="book-title">The Auctioneer AI Guide</div>
-          <div class="book-desc">A tool-agnostic guide for estate agents and auctioneers on using AI to work faster, communicate better, and manage more without expanding the team.</div>
-          <div class="book-footer">
-            <span class="book-price">—</span>
-            <a href="https://www.amazon.com/s?k=auctioneer+ai+guide+william+walsh" target="_blank" class="book-link">View on Amazon →</a>
-          </div>
-        </div>
+
 
       </div>
     </div>
@@ -505,20 +482,7 @@
           <p>I publish independently under the William J. Walsh name across two imprints: practical tracking tools for gig economy workers, and Practical AI Guides — accessible books for people who want to use AI tools in their real lives without the hype.</p>
         </div>
       </div>
-      <div class="about-stats">
-        <div class="stat-item">
-          <div class="stat-num">6+</div>
-          <div class="stat-label">Titles Published</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">2</div>
-          <div class="stat-label">Publishing Imprints</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">US</div>
-          <div class="stat-label">Primary Market — Amazon KDP</div>
-        </div>
-      </div>
+      <img src="author.jpg" alt="William J. Walsh" class="about-photo" />
     </div>
   </section>
 
@@ -535,25 +499,25 @@
       </div>
       <div class="contact-links">
         <!-- Replace handle placeholders with your actual handles -->
-        <a href="https://x.com/WJWalshAuthor" target="_blank" class="contact-row">
+        <a href="https://twitter.com/YOUR_X_HANDLE" target="_blank" class="contact-row">
           <span class="contact-platform">X / Twitter</span>
-          <span class="contact-handle">@WJWalshAuthor</span>
+          <span class="contact-handle">@YOUR_X_HANDLE</span>
         </a>
-        <a href="https://www.threads.com/@wjwalsh_author" target="_blank" class="contact-row">
+        <a href="https://threads.net/@YOUR_THREADS_HANDLE" target="_blank" class="contact-row">
           <span class="contact-platform">Threads</span>
-          <span class="contact-handle">@wjwalsh_author</span>
+          <span class="contact-handle">@YOUR_THREADS_HANDLE</span>
         </a>
-        <a href="https://www.instagram.com/wjwalsh_author/" target="_blank" class="contact-row">
+        <a href="https://instagram.com/YOUR_IG_HANDLE" target="_blank" class="contact-row">
           <span class="contact-platform">Instagram</span>
-          <span class="contact-handle">@wjwalsh_author</span>
+          <span class="contact-handle">@YOUR_IG_HANDLE</span>
         </a>
-        <a href="https://www.facebook.com/profile.php?id=61574275686596" target="_blank" class="contact-row">
+        <a href="https://facebook.com/YOUR_FB_PAGE" target="_blank" class="contact-row">
           <span class="contact-platform">Facebook</span>
-          <span class="contact-handle">WJ Walsh Author</span>
+          <span class="contact-handle">YOUR_FB_PAGE</span>
         </a>
         <a href="mailto:YOUR_EMAIL_ADDRESS" class="contact-row">
           <span class="contact-platform">Email</span>
-          <span class="contact-handle">williamjwalshauthor@gmail.com</span>
+          <span class="contact-handle">YOUR_EMAIL_ADDRESS</span>
         </a>
       </div>
     </div>
